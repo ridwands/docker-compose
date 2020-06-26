@@ -1,0 +1,18 @@
+version: '3.1'
+
+networks:
+  ridwands-network:
+volumes:
+  ridwands_volume:
+ 
+services:
+  db:
+    image: mariadb:latest
+    networks:
+      - ridwands-network
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    ports:
+      - 3306:3306
+    volumes:
+      - ridwands_volume
