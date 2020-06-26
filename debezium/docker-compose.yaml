@@ -1,0 +1,17 @@
+version: '3.1'
+
+volumes:
+  debezium_volume:
+ 
+services:
+  debezium:
+    image: debezium/connect:1.2
+    environment:
+      BOOTSTRAP_SERVERS: localhost:9093,localhost:9094,localhost:9094 
+      OFFSET_STORAGE_TOPIC: debezium 
+      GROUP_ID: 1 
+      CONFIG_STORAGE_TOPIC: debezium
+    ports:
+      - 8083:8083
+    volumes:
+      - debezium_volume
