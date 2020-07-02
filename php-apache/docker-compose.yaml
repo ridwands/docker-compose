@@ -1,0 +1,15 @@
+version : '2'
+networks:
+  ridwands-network:
+
+services:
+  php:
+      build:
+        context: .
+      ports:
+        - "8082:80"
+      volumes:
+        - $PWD:/app
+      networks:
+        - ridwands-network
+
