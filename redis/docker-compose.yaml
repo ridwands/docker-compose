@@ -3,7 +3,9 @@ services:
   redis:
     container_name: redis
     hostname: redis
-    image: redis
+    image: redis:alpine
+    ports:
+    - "6379:6379"
 
   redis-commander:
     container_name: redis-commander
@@ -11,6 +13,6 @@ services:
     image: rediscommander/redis-commander:latest
     restart: always
     environment:
-    - REDIS_HOSTS=10.0.0.11
+    - REDIS_HOSTS=redis
     ports:
     - "8083:8081"

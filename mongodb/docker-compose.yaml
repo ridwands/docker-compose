@@ -10,6 +10,8 @@ services:
     image: mongo:latest
     networks:
       - ridwands-network
+    environment:
+    - "TZ=Asia/Jakarta" # offset = -05:00 / DST -04:00
     ports:
       - 27017:27017
     volumes:

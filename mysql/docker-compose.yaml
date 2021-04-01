@@ -16,13 +16,3 @@ services:
       - 3306:3306
     volumes:
       - ridwands_volume
-  phpmyadmin:
-    links:
-      - db
-    image: phpmyadmin/phpmyadmin
-    networks:
-      - ridwands-network
-    ports:
-      - 80:8085
-    volumes:
-      - ridwands_volume
