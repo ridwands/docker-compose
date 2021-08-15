@@ -72,7 +72,7 @@ services:
   # Konga: Kong GUI
   #######################################
   konga:
-    image: pantsel/konga:latest
+    image: pantsel/konga:alpine
     restart: "no"
     networks:
         - kong-net
